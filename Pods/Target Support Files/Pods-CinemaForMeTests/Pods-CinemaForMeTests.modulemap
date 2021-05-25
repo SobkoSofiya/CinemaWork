@@ -1,0 +1,6 @@
+framework module Pods_CinemaForMeTests {
+  umbrella header "Pods-CinemaForMeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
