@@ -37,6 +37,8 @@ struct BottomMenu:View {
                 }).edgesIgnoringSafeArea(.all).onAppear{
                     UITabBar.appearance().tintColor = UIColor(Color("re"))
                     UITabBar.appearance().tintColor = UIColor(Color("re"))
+//                    UITabBar.appearance().unselectedItemTintColor = UIColor(Color("re"))
+//                    UITabBar.appearance().barTintColor = UIColor(Color("re"))
                     UITabBar.appearance().backgroundColor = UIColor(Color.init(#colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.09803921569, alpha: 1)))
                     UITabBar.appearance().barTintColor = UIColor(Color.init(#colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.09803921569, alpha: 1)))
                 }
@@ -87,7 +89,7 @@ struct Main: View {
                                         .frame(width: 100, height: 144, alignment: .center)
                                             
                                         }
-                                    })
+                                    }) .frame(width: 100, height: 144, alignment: .center)
                             }
                         }
                     }).padding(.leading)

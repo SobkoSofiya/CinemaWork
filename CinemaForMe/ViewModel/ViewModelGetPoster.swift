@@ -44,7 +44,8 @@ class ViewModelGetNew: ObservableObject {
                 let json = JSON(value)
 //                print("JSON: \(json)")
                 for i in 0..<json.count{
-                self.model.append(FilmsNewModel(movieId: json[i]["movieId"].stringValue, poster: json[i]["movieId"].stringValue))
+                self.model.append(FilmsNewModel(movieId: json[i]["movieId"].stringValue, poster: json[i]["poster"].stringValue))
+                    print(json[i]["movieId"].stringValue)
                 }
             case .failure(let error):
                
@@ -67,7 +68,7 @@ class ViewModelGetTrend: ObservableObject {
                 let json = JSON(value)
 //                print("JSON: \(json)")
                 for i in 0..<json.count{
-                self.model.append(FilmsTrendModel(movieId: json[i]["movieId"].stringValue, poster: json[i]["movieId"].stringValue))
+                self.model.append(FilmsTrendModel(movieId: json[i]["movieId"].stringValue, poster: json[i]["poster"].stringValue))
                 }
             case .failure(let error):
                
@@ -89,7 +90,7 @@ class ViewModelGetForMe: ObservableObject {
                 let json = JSON(value)
 //                print("JSON: \(json)")
                 for i in 0..<json.count{
-                self.model.append(FilmsForMeModel(movieId: json[i]["movieId"].stringValue, poster: json[i]["movieId"].stringValue))
+                self.model.append(FilmsForMeModel(movieId: json[i]["movieId"].stringValue, poster: json[i]["poster"].stringValue))
                 }
             case .failure(let error):
                

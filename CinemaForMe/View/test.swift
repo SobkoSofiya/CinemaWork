@@ -8,11 +8,27 @@
 import SwiftUI
 import  SDWebImageSwiftUI
 struct test: View {
-//    @State
-    @StateObject var modelPoster = ViewModelGetPoster()
+    @StateObject var model = ViewModelGetTrend()
+    @StateObject var episodModel = GetEpisode()
+    @State var url = ""
     var body: some View {
-        WebImage(url: URL(string: "http://cinema.areas.su/up/images/\(modelPoster.model.first?.backgroundImage ?? "")")).resizable().frame(width: UIScreen.main.bounds.width
-                                                                                                                                           , height: 400, alignment: .center)
+//
+        ZStack{
+           
+//            if let url = episodModel.episodeFilm.first?.preview {
+                Text("Ect")
+                              Video(urlString:$url).frame(width: UIScreen.main.bounds.width, height: 210, alignment: .center)
+//            }else{
+//                Text("Нету")
+//            }
+        }.onAppear{
+        print("lala")
+            DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                self.url = "http://cinema.areas.su/up/video/\(episodModel.episodeFilm.first?.preview ?? "")"
+            }
+            
+        }
+//        } height: 400, alignment: .center)
     }
 }
 

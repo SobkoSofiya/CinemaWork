@@ -153,15 +153,9 @@ struct Video:UIViewControllerRepresentable {
 
 struct TagsView:View {
     @Binding var model:[Tags]
-    let colums = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-      
-      
-    ]
+ 
     var body: some View{
         ZStack{
-//            LazyHGrid(rows: colums, spacing:10, content: {
             VStack(alignment:.leading){
             HStack{
                 if model.count > 0{

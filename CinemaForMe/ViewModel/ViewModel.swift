@@ -13,7 +13,7 @@ import SwiftyJSON
 class ViewModel: ObservableObject {
     func signUp(email:String, password:String,firstName:String, lastName:String,con:((_ result:String, _ error:String) -> Void)? = nil) {
         let url = "http://cinema.areas.su/auth/register?email=\(email)&password=\(password)&firstName=\(firstName)&lastName=\(lastName)"
-        AF.request(url, method: .post).validate().responseJSON { response in
+        AF.request(url, method: .post).validate().responseString { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
